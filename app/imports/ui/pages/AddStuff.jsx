@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, NumField, SelectField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, NumField, SelectField, LongTextField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -58,7 +58,7 @@ const AddStuff = () => {
             <Card>
               <Card.Body>
                 <TextField name="name" />
-                <TextField name="description" />
+                <LongTextField name="description" />
                 <NumField name="price" decimal={2} />
                 <SelectField name="condition" />
                 <SelectField name="category" />
