@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 const StuffItem = ({ stuff }) => (
   <tr>
     <td>{stuff.name}</td>
-    <td>{stuff.quantity}</td>
     <td>{stuff.condition}</td>
     <td>
       <Link to={`/edit/${stuff._id}`}>Edit</Link>
@@ -18,7 +17,6 @@ const StuffItem = ({ stuff }) => (
 StuffItem.propTypes = {
   stuff: PropTypes.shape({
     name: PropTypes.string,
-    quantity: PropTypes.number,
     condition: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
