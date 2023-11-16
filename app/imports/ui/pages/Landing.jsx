@@ -9,19 +9,19 @@ const Landing = () => (
       <Col xs={4}>
         <PeopleFill size={100} />
         <h1>Multiple Users</h1>
-        <h5>This address book enables any number of users to register and save their business contacts. You can only see the contacts you have created.</h5>
+        <h5>This e-commerce site enables any number of users to register and post their items for sale. Every user can see all the listings.</h5>
       </Col>
 
       <Col xs={4}>
         <FileEarmarkTextFill size={100} />
-        <h1>Contact Details</h1>
-        <h5>For each contact, you can save their name, address, and phone number.</h5>
+        <h1>Listing Details</h1>
+        <h5>For each listing, you can save a title, description, images, and price.</h5>
       </Col>
 
       <Col xs={4}>
         <Calendar2CheckFill size={100} />
-        <h1>Timestamped Notes</h1>
-        <h5>Each time you make contact with a contact, you can write a note that summarizes the conversation. This note is saved along with a timestamp with the contact.</h5>
+        <h1>Timestamped Messages</h1>
+        <h5>Each time you open a listing you can make contact with the seller. The messages is saved along with a timestamp with the listing.</h5>
       </Col>
 
     </Row>
