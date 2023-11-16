@@ -10,12 +10,19 @@ import { Stuffs } from '../../api/stuff/Stuff';
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
   name: String,
-  quantity: Number,
+  description: String,
+  price: Number,
   condition: {
     type: String,
     allowedValues: ['excellent', 'good', 'fair', 'poor'],
     defaultValue: 'good',
   },
+  category: {
+    type: String,
+    allowedValues: ['TextBooks', 'Furniture', 'Electronics', 'Transportation'],
+    defaultValue: 'TextBooks',
+  },
+  imageUpload: String,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -25,10 +32,10 @@ const AddStuff = () => {
 
   // On submit, insert the data.
   const submit = (data, formRef) => {
-    const { name, quantity, condition } = data;
+    const { name, description, price, condition, category, imageUpload } = data;
     const owner = Meteor.user().username;
     Stuffs.collection.insert(
-      { name, quantity, condition, owner },
+      { name, description, price, condition, category, imageUpload, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -46,13 +53,16 @@ const AddStuff = () => {
     <Container className="py-3">
       <Row className="justify-content-center">
         <Col xs={5}>
-          <Col className="text-center"><h2>Add Stuff</h2></Col>
+          <Col className="text-center"><h2>Post Your Listing</h2></Col>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>
                 <TextField name="name" />
-                <NumField name="quantity" decimal={null} />
+                <TextField name="description" />
+                <NumField name="price" decimal={2} />
                 <SelectField name="condition" />
+                <SelectField name="category" />
+                <TextField name="imageUpload" />
                 <SubmitField value="Submit" />
                 <ErrorsField />
               </Card.Body>

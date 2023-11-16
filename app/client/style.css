@@ -1,19 +1,25 @@
 /* Use Open Sans as the default sans serif font. */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700|Source+Code+Pro:300,400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700|Source+Code+Pro:300,400,500,700|Dancing+Script:300,400,500,700");
 
 /* Set up some CSS variables to theme the application. */
 :root {
-  --matr-navbar-bg: #ECECEC;
+  --matr-navbar-bg: #024731;
   --matr-navbar-bg-rgb: 236, 236, 236;
 }
 
+.navbar {
+  background-color: #024731 !important;
+}
 /* Change bootstrap variable values.
  See https://getbootstrap.com/docs/5.2/customize/css-variables/
  */
 body {
   --bs-light-rgb: var(--matr-navbar-bg-rgb);
 }
-
+h2 {
+  color: white !important;
+  font-family: Dancing Script;
+}
 /* Set the alert background on the signin and signup pages. */
 #signin-page .alert-light, #signup-page .alert-light {
   --bs-alert-bg: var(--matr-navbar-bg);
@@ -22,7 +28,7 @@ body {
 /* Define custom styles */
 .gray-background {
   background-color: var(--matr-navbar-bg);
-  color: var(--bs-dark);
+  color: var(--bs-light);
   padding-top: 10px;
   padding-bottom: 20px;
 }
