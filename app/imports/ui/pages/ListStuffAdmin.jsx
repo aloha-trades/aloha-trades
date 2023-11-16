@@ -24,15 +24,19 @@ const ListStuffAdmin = () => {
   return (ready ? (
     <Container className="py-3">
       <Row className="justify-content-center">
-        <Col md={7}>
+        <Col md={9}>
           <Col className="text-center"><h2>List Stuff (Admin)</h2></Col>
           <Table striped bordered hover>
             <thead>
               <tr>
                 <th>Name</th>
-                <th>Quantity</th>
+                <th>Category</th>
+                <th>Price</th>
                 <th>Condition</th>
                 <th>Owner</th>
+                <th>Description</th>
+                <th>Approve</th>
+                <th>Deny</th>
               </tr>
             </thead>
             <tbody>

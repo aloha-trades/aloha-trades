@@ -47,7 +47,7 @@ const EditStuff = () => {
             <Card>
               <Card.Body>
                 <TextField name="name" />
-                <NumField name="quantity" decimal={null} />
+                <NumField name="price" decimal={2} />
                 <SelectField name="condition" />
                 <SubmitField value="Submit" />
                 <ErrorsField />
