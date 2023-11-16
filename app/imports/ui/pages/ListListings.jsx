@@ -27,21 +27,21 @@ const ListListings = () => {
   const listings = [
     {
       title: 'blender',
-      image: 'https://github.com/philipmjohnson.png',
+      image: 'images/blender.jpg',
       description: 'It blends.',
       price: 20.50,
       name: 'John Doe',
     },
     {
       title: 'bed',
-      image: 'https://avatars0.githubusercontent.com/u/7494478?s=460&v=4',
+      image: 'images/mattress.jpg',
       description: 'It lets you sleep.',
       price: 100,
       name: 'John Doe',
     },
     {
       title: 'sheets',
-      image: 'https://avatars0.githubusercontent.com/u/7494478?s=460&v=4',
+      image: 'images/sheets.jpg',
       description: 'Clean and ready for new owner.',
       price: 10,
       name: 'John Doe',
