@@ -5,9 +5,14 @@
   ],
 
   "defaultData": [
-    { "name": "Basket","description": "A item", "quantity": 3, "owner": "john@foo.com", "price":34, "condition": "excellent" },
-    { "name": "Bicycle","description": "A item", "quantity": 2, "owner": "john@foo.com","price":34, "condition": "poor" },
-    { "name": "Banana","description": "A item", "quantity": 2, "owner": "admin@foo.com","price":34, "condition": "good" },
-    { "name": "Boogie Board","description": "A item", "quantity": 2, "owner": "admin@foo.com","price":34, "condition": "excellent" }
-  ]
+    { "name": "Basket", "description": "A item", "quantity": 3, "owner": "john@foo.com", "price":34, "condition": "excellent" },
+    { "name": "Bicycle", "description": "A item", "quantity": 2, "owner": "john@foo.com","price":34, "condition": "poor" },
+    { "name": "Banana", "description": "A item", "quantity": 2, "owner": "admin@foo.com","price":34, "condition": "good" },
+    { "name": "Boogie Board", "description": "A item", "quantity": 2, "owner": "admin@foo.com","price":34, "condition": "excellent" }
+  ],
+
+  "monti": {
+    "appId": "6pzXPKycqefWA852t",
+    "appSecret": "c923b1c4-355b-4792-8b2f-e735ac1379c9"
+  }
 }
