@@ -1,16 +1,11 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
+import { Meteor } from 'meteor/meteor';
 
-/**
- * The StuffsCollection. It encapsulates state and variable values for stuff.
- */
 class StuffsCollection {
   constructor() {
-    // The name of this collection.
     this.name = 'StuffsCollection';
-    // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
-    // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       name: String,
       description: String,
@@ -28,16 +23,20 @@ class StuffsCollection {
       },
       imageUpload: String,
     });
-    // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
-    // Define names for publications and subscriptions
     this.userPublicationName = `${this.name}.publication.user`;
     this.adminPublicationName = `${this.name}.publication.admin`;
   }
+
+  insertItem(data) {
+    if (!Meteor.userId()) {
+      throw new Meteor.Error('not-authorized', 'You are not authorized to perform this action.');
+    }
+
+    const owner = Meteor.user().username;
+    this.schema.validate(data);
+    this.collection.insert({ ...data, owner });
+  }
 }
 
-/**
- * The singleton instance of the StuffsCollection.
- * @type {StuffsCollection}
- */
 export const Stuffs = new StuffsCollection();

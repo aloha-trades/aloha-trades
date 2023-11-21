@@ -1,54 +1,23 @@
-import React from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, NumField, SelectField, LongTextField, SubmitField, TextField } from 'uniforms-bootstrap5';
-import swal from 'sweetalert';
-import { Meteor } from 'meteor/meteor';
-import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
-import SimpleSchema from 'simpl-schema';
-import { Stuffs } from '../../api/stuff/Stuff';
+// AddStuff.jsx
 
-// Create a schema to specify the structure of the data to appear in the form.
-const formSchema = new SimpleSchema({
-  name: String,
-  description: String,
-  price: Number,
-  condition: {
-    type: String,
-    allowedValues: ['excellent', 'good', 'fair', 'poor'],
-    defaultValue: 'good',
-  },
-  category: {
-    type: String,
-    allowedValues: ['TextBooks', 'Furniture', 'Electronics', 'Transportation'],
-    defaultValue: 'TextBooks',
-  },
-  imageUpload: String,
-});
+// ... (imports and other existing code)
 
-const bridge = new SimpleSchema2Bridge(formSchema);
-
-/* Renders the AddStuff page for adding a document. */
 const AddStuff = () => {
+  let fRef = null; // Declaration of fRef
 
-  // On submit, insert the data.
   const submit = (data, formRef) => {
     const { name, description, price, condition, category, imageUpload } = data;
     const owner = Meteor.user().username;
-    Stuffs.collection.insert(
-      { name, description, price, condition, category, imageUpload, owner },
-      (error) => {
-        if (error) {
-          swal('Error', error.message, 'error');
-        } else {
-          swal('Success', 'Item added successfully', 'success');
-          formRef.reset();
-        }
-      },
-    );
+
+    try {
+      Stuffs.insertItem({ name, description, price, condition, category, imageUpload, owner });
+      swal('Success', 'Item added successfully', 'success');
+      formRef.reset();
+    } catch (error) {
+      swal('Error', error.message, 'error');
+    }
   };
 
-  // Render the form. Use Uniforms: https://github.com/vazco/uniforms
-  let fRef = null;
   return (
     <Container className="py-3">
       <Row className="justify-content-center">
