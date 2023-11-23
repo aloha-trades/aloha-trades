@@ -4,7 +4,7 @@ import { Card, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
-const Listing = ({ listing }) => (
+const ListingAdmin = ({ listing }) => (
   <Card className="h-100 w-100">
     <Card.Header>
       <Image src={listing.image} width={100} />
@@ -16,15 +16,14 @@ const Listing = ({ listing }) => (
       <Card.Subtitle>{listing.category}</Card.Subtitle>
       <Card.Subtitle>Condition: {listing.condition}</Card.Subtitle>
       <Card.Text>{listing.description}</Card.Text>
-      <Card.Subtitle>
-        <Link to={`/edit/${listing._id}`}>Edit</Link>
-      </Card.Subtitle>
+      <Card.Subtitle>{listing.isApproved}</Card.Subtitle>
+      <Link to={`/review/${listing._id}`}>Review</Link>
     </Card.Body>
   </Card>
 );
 
 // Require a document to be passed to this component.
-Listing.propTypes = {
+ListingAdmin.propTypes = {
   listing: PropTypes.shape({
     title: PropTypes.string,
     image: PropTypes.string,
@@ -38,4 +37,4 @@ Listing.propTypes = {
   }).isRequired,
 };
 
-export default Listing;
+export default ListingAdmin;

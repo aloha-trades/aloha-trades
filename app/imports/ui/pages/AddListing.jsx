@@ -5,11 +5,12 @@ import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
-import { Stuffs } from '../../api/stuff/Stuff';
+import { Listings } from '../../api/listing/Listing';
 
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
-  name: String,
+  title: String,
+  image: String,
   description: String,
   price: Number,
   condition: {
@@ -22,20 +23,20 @@ const formSchema = new SimpleSchema({
     allowedValues: ['TextBooks', 'Furniture', 'Electronics', 'Transportation'],
     defaultValue: 'TextBooks',
   },
-  imageUpload: String,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
-/* Renders the AddStuff page for adding a document. */
-const AddStuff = () => {
+/* Renders the AddListing page for adding a document. */
+const AddListing = () => {
 
   // On submit, insert the data.
   const submit = (data, formRef) => {
-    const { name, description, price, condition, category, imageUpload } = data;
+    const { title, image, description, price, condition, category } = data;
     const owner = Meteor.user().username;
-    Stuffs.collection.insert(
-      { name, description, price, condition, category, imageUpload, owner },
+    const isApproved = false;
+    Listings.collection.insert(
+      { title, image, description, price, condition, category, owner, isApproved },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -57,12 +58,12 @@ const AddStuff = () => {
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>
-                <TextField name="name" />
+                <TextField name="title" />
                 <LongTextField name="description" />
                 <NumField name="price" decimal={2} />
                 <SelectField name="condition" />
                 <SelectField name="category" />
-                <TextField name="imageUpload" />
+                <TextField name="image" />
                 <SubmitField value="Submit" />
                 <ErrorsField />
               </Card.Body>
@@ -74,4 +75,4 @@ const AddStuff = () => {
   );
 };
 
-export default AddStuff;
+export default AddListing;

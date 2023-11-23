@@ -2,17 +2,18 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
 /**
- * The StuffsCollection. It encapsulates state and variable values for stuff.
+ * The ListingCollection. It encapsulates state and variable values for our listings.
  */
-class StuffsCollection {
+class ListingCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'StuffsCollection';
+    this.name = 'ListingCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      name: String,
+      title: String,
+      image: String,
       description: String,
       owner: String,
       price: Number,
@@ -26,6 +27,7 @@ class StuffsCollection {
         allowedValues: ['TextBooks', 'Furniture', 'Electronics', 'Transportation'],
         defaultValue: 'TextBooks',
       },
+      isApproved: String,
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
@@ -37,6 +39,6 @@ class StuffsCollection {
 
 /**
  * The singleton instance of the StuffsCollection.
- * @type {StuffsCollection}
+ * @type {ListingCollection}
  */
-export const Stuffs = new StuffsCollection();
+export const Listings = new ListingCollection();
