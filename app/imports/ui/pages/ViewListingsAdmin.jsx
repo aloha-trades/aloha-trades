@@ -26,11 +26,11 @@ const ListListingsAdmin = () => {
   return (ready ? (
     <Container className="py-3">
       <Row className="justify-content-center">
-        <Col md={7}>
+        <Col md={20}>
           <Col className="text-center">
             <h2>View Listings (Admin)</h2>
           </Col>
-          <Row xs={1} md={2} lg={3} className="g-4">
+          <Row xs={3} md={3} lg={3} className="g-4">
             {listings.map((listing) => (<Col key={listing._id}><ListingAdmin listing={listing} /></Col>))}
           </Row>
         </Col>

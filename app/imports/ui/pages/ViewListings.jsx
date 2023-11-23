@@ -33,7 +33,7 @@ const ListListings = () => {
   return (ready ? (
     <Container className="py-3">
       <Row className="justify-content-center">
-        <Col md={15}>
+        <Col md={20}>
           <Col className="text-center">
             <h2>View Listings</h2>
           </Col>
