@@ -43,7 +43,7 @@ Listing.propTypes = {
     category: PropTypes.string,
     condition: PropTypes.string,
     owner: PropTypes.string,
-    isApproved: PropTypes.bool,
+    isApproved: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
 };

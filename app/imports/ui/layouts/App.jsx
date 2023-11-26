@@ -17,6 +17,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import ListListings from '../pages/ViewListings';
 import ListListingsAdmin from '../pages/ViewListingsAdmin';
 import EditListing from '../pages/EditListing';
+import ReviewListing from '../pages/ReviewListing';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -40,6 +41,7 @@ const App = () => {
           <Route path="/post" element={<ProtectedRoute><AddListing /></ProtectedRoute>} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditListing /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListListingsAdmin /></AdminProtectedRoute>} />
+          <Route path="/review/:_id" element={<AdminProtectedRoute ready={ready}><ReviewListing /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
