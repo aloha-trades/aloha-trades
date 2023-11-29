@@ -18,6 +18,7 @@ import ListListings from '../pages/ViewListings';
 import ListListingsAdmin from '../pages/ViewListingsAdmin';
 import EditListing from '../pages/EditListing';
 import ReviewListing from '../pages/ReviewListing';
+import MarketplaceListings from '../pages/MarketplaceListings';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -38,6 +39,7 @@ const App = () => {
           <Route path="/signout" element={<SignOut />} />
           <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
           <Route path="/list" element={<ProtectedRoute><ListListings /></ProtectedRoute>} />
+          <Route path="/market" element={<ProtectedRoute><MarketplaceListings /></ProtectedRoute>} />
           <Route path="/post" element={<ProtectedRoute><AddListing /></ProtectedRoute>} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditListing /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListListingsAdmin /></AdminProtectedRoute>} />

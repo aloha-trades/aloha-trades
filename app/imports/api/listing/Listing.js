@@ -38,6 +38,7 @@ class ListingCollection {
     // Define names for publications and subscriptions
     this.userPublicationName = `${this.name}.publication.user`;
     this.adminPublicationName = `${this.name}.publication.admin`;
+    this.notByOwner = `${{ $ne: this.name }}.publication.user`;
   }
 }
 

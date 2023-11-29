@@ -12,6 +12,14 @@ Meteor.publish(Listings.userPublicationName, function () {
   return this.ready();
 });
 
+// Marketplace Listings publication
+Meteor.publish(Listings.notByOwner, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Listings.collection.find({ owner: { $ne: username } });
+  }
+  return this.ready();
+});
 // Admin-level publication.
 // If logged in and with admin role, then publish all documents from all users. Otherwise, publish nothing.
 Meteor.publish(Listings.adminPublicationName, function () {
