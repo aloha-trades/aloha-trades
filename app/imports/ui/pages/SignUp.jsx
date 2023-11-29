@@ -21,8 +21,15 @@ const SignUp = ({ location }) => {
   const bridge = new SimpleSchema2Bridge(schema);
 
   /* Handle SignUp submission. Create user account and a profile entry, then redirect to the home page. */
+  /* Handle SignUp submission with email domain validation. */
   const submit = (doc) => {
     const { email, password } = doc;
+
+    if (!email.toLowerCase().endsWith('@hawaii.edu')) {
+      setError('Email should be your school email');
+      return; // Prevent further execution if email domain is invalid
+    }
+
     Accounts.createUser({ email, username: email, password }, (err) => {
       if (err) {
         setError(err.reason);
