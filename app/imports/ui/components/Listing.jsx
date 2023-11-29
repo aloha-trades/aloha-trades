@@ -27,7 +27,7 @@ const Listing = ({ listing }) => (
       </div>
       <Card.Text>{listing.description}</Card.Text>
       <Card.Subtitle>
-        <Link to={`/edit/${listing._id}`}>Edit</Link>
+        <Link to={`/edit/${listing._id}`}>Edit my Listing</Link>
       </Card.Subtitle>
     </Card.Body>
   </Card>
