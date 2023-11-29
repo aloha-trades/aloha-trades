@@ -20,9 +20,9 @@ const Landing = () => (
       </Col>
 
       <Col xs={4}>
-        <Link to="/pages/ListStuff.jsx"> {/* Use Link to navigate */}
+        <Link to="/market">
           <ShopWindow size={100} />
-          <h1>See listings</h1>
+          <h1>UH Marketplace</h1>
         </Link>
       </Col>
     </Row>
