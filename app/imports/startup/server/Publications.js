@@ -16,12 +16,12 @@ Meteor.publish(Listings.userPublicationName, function () {
 Meteor.publish(Listings.notByOwner, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
-    return Listings.collection.find({ owner: { $ne: username } });
+    return Listings.collection.find({ owner: { $ne: username }, isApproved: 'true' });
   }
   return this.ready();
 });
 // Admin-level publication.
-// If logged in and with admin role, then publish all documents from all users. Otherwise, publish nothing.
+// If logged in and with admin role, then publish all documents from all users. Otherwise, )publish nothing.
 Meteor.publish(Listings.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Listings.collection.find();
