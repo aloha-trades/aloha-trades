@@ -5,7 +5,6 @@ import { useTracker } from 'meteor/react-meteor-data';
 import { Roles } from 'meteor/alanning:roles';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Footer from '../components/Footer';
-import Landing from '../pages/Landing';
 import AddListing from '../pages/AddListing';
 import NotFound from '../pages/NotFound';
 import SignUp from '../pages/SignUp';
@@ -34,13 +33,11 @@ const App = () => {
       <div className="d-flex flex-column min-vh-100">
         <NavBar />
         <Routes>
-          <Route exact path="/" element={<SignIn />} />
-          <Route path="/signin" element={<SignIn />} />
+          <Route exact path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signout" element={<SignOut />} />
-          <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
-          <Route path="/list" element={<ProtectedRoute><ListListings /></ProtectedRoute>} />
           <Route path="/userhome" element={<ProtectedRoute><LandingUser /></ProtectedRoute>} />
+          <Route path="/list" element={<ProtectedRoute><ListListings /></ProtectedRoute>} />
           <Route path="/market" element={<ProtectedRoute><MarketplaceListings /></ProtectedRoute>} />
           <Route path="/post" element={<ProtectedRoute><AddListing /></ProtectedRoute>} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditListing /></ProtectedRoute>} />
@@ -88,7 +85,7 @@ ProtectedRoute.propTypes = {
 };
 
 ProtectedRoute.defaultProps = {
-  children: <Landing />,
+  children: <LandingUser />,
 };
 
 // Require a component and location to be passed to each AdminProtectedRoute.
@@ -99,7 +96,7 @@ AdminProtectedRoute.propTypes = {
 
 AdminProtectedRoute.defaultProps = {
   ready: false,
-  children: <Landing />,
+  children: <LandingUser />,
 };
 
 export default App;
