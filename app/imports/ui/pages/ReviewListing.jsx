@@ -61,6 +61,9 @@ const ReviewListing = () => {
                 <Row>
                   <SelectField name="isApproved" />
                 </Row>
+                <Row>
+                  <SelectField name="isAvailable" />
+                </Row>
                 <SubmitField value="Submit" />
                 <ErrorsField />
                 <HiddenField name="owner" />

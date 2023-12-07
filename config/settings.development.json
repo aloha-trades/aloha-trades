@@ -5,9 +5,9 @@
   ],
 
   "defaultData": [
-    { "title": "Basket", "image":  "https://www.ikea.com/us/en/images/products/slibb-flexible-laundry-basket-turquoise__0927772_pe789702_s5.jpg", "description": "One Laundry Basket for Sale", "owner": "john@foo.com", "price": "15.00", "condition": "excellent", "category": "Furniture", "isApproved": "true" },
-    { "title": "Bicycle", "image":  "https://thecabe.com/forum/attachments/a-jpg.175934/","description": "Slightly used bicycle for sale", "owner": "john@foo.com","price": "105.00", "condition": "poor", "category": "Transportation", "isApproved": "false"},
-    { "title": "Couch", "image":  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr4hBKUVfAYshzsBEuGlRx-xJHyZpUxCIJf8BTZUpFefSJI8q2TAfpTopsKfWcpy7Xj-M&usqp=CAU","description": "No Pets, no smoking couch", "owner": "john@foo.com","price": "450.00", "condition": "excellent", "category": "Furniture", "isApproved": "true"}
+    { "title": "Basket", "image":  "https://www.ikea.com/us/en/images/products/slibb-flexible-laundry-basket-turquoise__0927772_pe789702_s5.jpg", "description": "One Laundry Basket for Sale", "owner": "john@foo.com", "price": "15.00", "condition": "excellent", "category": "Furniture", "isApproved": "true", "isAvailable": "true"},
+    { "title": "Bicycle", "image":  "https://thecabe.com/forum/attachments/a-jpg.175934/","description": "Slightly used bicycle for sale", "owner": "john@foo.com","price": "105.00", "condition": "poor", "category": "Transportation", "isApproved": "false", "isAvailable": "true"},
+    { "title": "Couch", "image":  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr4hBKUVfAYshzsBEuGlRx-xJHyZpUxCIJf8BTZUpFefSJI8q2TAfpTopsKfWcpy7Xj-M&usqp=CAU","description": "No Pets, no smoking couch", "owner": "john@foo.com","price": "450.00", "condition": "excellent", "category": "Furniture", "isApproved": "true", "isAvailable": "true"}
   ],
 
   "monti": {

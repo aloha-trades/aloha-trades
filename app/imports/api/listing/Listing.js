@@ -32,6 +32,11 @@ class ListingCollection {
         allowedValues: ['true', 'false'],
         defaultValue: 'false',
       },
+      isAvailable: {
+        type: String,
+        allowedValues: ['true', 'false'],
+        defaultValue: 'true',
+      },
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);

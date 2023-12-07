@@ -35,8 +35,9 @@ const AddListing = () => {
     const { title, image, description, price, condition, category } = data;
     const owner = Meteor.user().username;
     const isApproved = false;
+    const isAvailable = true;
     Listings.collection.insert(
-      { title, image, description, price, condition, category, owner, isApproved },
+      { title, image, description, price, condition, category, owner, isApproved, isAvailable },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');

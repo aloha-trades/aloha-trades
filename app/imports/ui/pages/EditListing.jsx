@@ -32,8 +32,8 @@ const EditListing = () => {
   // console.log('EditStuff', doc, ready);
   // On successful submit, insert the data.
   const submit = (data) => {
-    const { title, image, description, price, condition, category } = data;
-    Listings.collection.update(_id, { $set: { title, image, description, price, condition, category } }, (error) => (error ?
+    const { title, image, description, price, condition, category, isAvailable } = data;
+    Listings.collection.update(_id, { $set: { title, image, description, price, condition, category, isAvailable } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Item updated successfully', 'success')));
   };
@@ -57,6 +57,9 @@ const EditListing = () => {
                 <Row>
                   <SelectField name="category" />
                   <TextField name="image" />
+                </Row>
+                <Row>
+                  <SelectField name="isAvailable" />
                 </Row>
                 <SubmitField value="Submit" />
                 <ErrorsField />

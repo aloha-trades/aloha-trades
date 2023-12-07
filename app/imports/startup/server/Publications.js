@@ -16,7 +16,7 @@ Meteor.publish(Listings.userPublicationName, function () {
 Meteor.publish(Listings.notByOwner, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
-    return Listings.collection.find({ owner: { $ne: username }, isApproved: 'true' });
+    return Listings.collection.find({ owner: { $ne: username }, isApproved: 'true', isAvailable: 'true' });
   }
   return this.ready();
 });

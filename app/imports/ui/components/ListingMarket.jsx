@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, Image } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 const ListingMarket = ({ listing }) => (
@@ -26,9 +25,6 @@ const ListingMarket = ({ listing }) => (
         <Card.Subtitle>Condition: {listing.condition}</Card.Subtitle>
       </div>
       <Card.Text>{listing.description}</Card.Text>
-      <Card.Subtitle>
-        <Link to={`/edit/${listing._id}`}>Edit</Link>
-      </Card.Subtitle>
     </Card.Body>
   </Card>
 );
@@ -44,6 +40,7 @@ ListingMarket.propTypes = {
     condition: PropTypes.string,
     owner: PropTypes.string,
     isApproved: PropTypes.string,
+    isAvailable: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
 };

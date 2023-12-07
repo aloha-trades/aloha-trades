@@ -44,6 +44,7 @@ Listing.propTypes = {
     condition: PropTypes.string,
     owner: PropTypes.string,
     isApproved: PropTypes.string,
+    isAvailable: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
 };

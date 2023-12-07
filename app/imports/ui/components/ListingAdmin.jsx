@@ -27,6 +27,7 @@ const ListingAdmin = ({ listing }) => (
       </div>
       <Card.Text>{listing.description}</Card.Text>
       <Card.Subtitle>Approved: {listing.isApproved === 'true' ? 'Yes' : 'No'}</Card.Subtitle>
+      <Card.Subtitle>Available: {listing.isAvailable === 'true' ? 'Yes' : 'No'}</Card.Subtitle>
       <Link to={`/review/${listing._id}`}>Review</Link>
     </Card.Body>
   </Card>
@@ -43,6 +44,7 @@ ListingAdmin.propTypes = {
     condition: PropTypes.string,
     owner: PropTypes.string,
     isApproved: PropTypes.string,
+    isAvailable: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
 };
