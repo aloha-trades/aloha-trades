@@ -18,7 +18,7 @@
 body {
   --bs-dark: var(--matr-navbar-bg);
   --bs-light-rgb: var(--matr-navbar-bg-rgb);
-  background: fixed center url("images/Background.jpeg");
+  background: fixed center url("images/Shopping-Cart-Background.jpg");
   background-size: cover;
 }
 
