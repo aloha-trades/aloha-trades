@@ -20,7 +20,8 @@ const ListingAdmin = ({ listing }) => (
         </div>
       </div>
     </Card.Header>
-    <Card.Body>
+
+    <Card.Body className={listing.isApproved === 'false' ? 'bg-danger' : 'bg-light'}>
       <Card.Title>{listing.title} listed by {listing.owner}</Card.Title>
       <div className="d-flex justify-content-center">
         <Card.Subtitle>Condition: {listing.condition}</Card.Subtitle>
