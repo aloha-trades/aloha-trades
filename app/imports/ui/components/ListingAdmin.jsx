@@ -22,11 +22,11 @@ const ListingAdmin = ({ listing }) => (
     </Card.Header>
 
     <Card.Body className={listing.isApproved === 'false' ? 'bg-danger' : 'bg-light'}>
-      <Card.Title>{listing.title} listed by {listing.owner}</Card.Title>
+      <Card.Title>{listing.description}</Card.Title>
       <div className="d-flex justify-content-center">
         <Card.Subtitle>Condition: {listing.condition}</Card.Subtitle>
       </div>
-      <Card.Text>{listing.description}</Card.Text>
+      <Card.Text>Offered by {listing.owner}</Card.Text>
       <Card.Subtitle>Approved: {listing.isApproved === 'true' ? 'Yes' : 'No'}</Card.Subtitle>
       <Card.Subtitle>Available: {listing.isAvailable === 'true' ? 'Yes' : 'No'}</Card.Subtitle>
       <Link to={`/review/${listing._id}`}>Review</Link>
