@@ -26,6 +26,7 @@ const ListingMarket = ({ listing }) => (
       </div>
       <Card.Text>{listing.description}</Card.Text>
     </Card.Body>
+    <button onClick="buy ('false')" type="button" className="btn btn-success">Buy!</button>
   </Card>
 );
 
