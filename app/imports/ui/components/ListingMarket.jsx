@@ -1,7 +1,17 @@
 import React from 'react';
+import swal from 'sweetalert';
 import PropTypes from 'prop-types';
 import { Card, Image } from 'react-bootstrap';
+import { Listings } from '../../api/listing/Listing';
 
+const buy = (listing) => {
+  // Set isAvailable to false directly
+  Listings.collection.update(listing._id, { $set: { isAvailable: false } }, (error) => (
+    error ?
+      swal('Error', error.message, 'error') :
+      swal('Success', 'Item purchased successfully', 'success')
+  ));
+};
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 const ListingMarket = ({ listing }) => (
   <Card className="h-100 w-100">
@@ -26,7 +36,7 @@ const ListingMarket = ({ listing }) => (
       </div>
       <Card.Text>{listing.description}</Card.Text>
     </Card.Body>
-    <button onClick="buy ('false')" type="button" className="btn btn-success">Buy!</button>
+    <button onClick={() => buy(listing)} type="button" className="btn btn-success">Buy</button>
   </Card>
 );
 
