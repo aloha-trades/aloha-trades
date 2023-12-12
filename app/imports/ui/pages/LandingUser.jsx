@@ -14,7 +14,7 @@ const Landing = () => (
       </Col>
 
       <Col xs={4}>
-        <Link to="/feedback">
+        <Link to="/feedbacklist">
           <PatchQuestion size={100} />
           <h1>Feedback</h1>
         </Link>
