@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { ShopWindow, Inbox, CartPlusFill } from 'react-bootstrap-icons';
+import { ShopWindow, Inbox, CartPlusFill, PatchQuestion } from 'react-bootstrap-icons';
 import { Link } from 'react-router-dom';
 
 /* A simple static component to render some text for the landing page. */
@@ -14,9 +14,10 @@ const Landing = () => (
       </Col>
 
       <Col xs={4}>
-        <Inbox size={100} />
-        <h1>Check inbox</h1>
-        <h5>Check messages from transactions</h5>
+        <Link to="/feedback">
+          <PatchQuestion size={100} />
+          <h1>Feedback</h1>
+        </Link>
       </Col>
 
       <Col xs={4}>
