@@ -12,6 +12,7 @@
 .navbar {
   background-color: #024731 !important;
 }
+
 /* Change bootstrap variable values.
  See https://getbootstrap.com/docs/5.2/customize/css-variables/
  */
@@ -29,13 +30,27 @@ body .navbar {
   --bs-navbar-color: var(--matr-navbar-text-color);
   --bs-navbar-hover-color: var(--matr-navbar-highlight-text);
 }
+
+/* Set the alert background on the signin and signup pages. */
+#signin-page .alert-light, #signup-page .alert-light {
+  --bs-alert-bg: var(--matr-navbar-bg);
+}
+
+h1 {
+  color: white !important;
+}
+
 h2 {
   color: white !important;
   font-family: Dancing Script;
 }
-/* Set the alert background on the signin and signup pages. */
-#signin-page .alert-light, #signup-page .alert-light {
-  --bs-alert-bg: var(--matr-navbar-bg);
+
+h5 {
+  color: white !important;
+}
+
+.whiteIcon {
+  color: white;
 }
 
 /* Define custom styles */

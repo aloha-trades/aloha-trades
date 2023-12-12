@@ -5,8 +5,6 @@ import { useTracker } from 'meteor/react-meteor-data';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Listings } from '../../api/listing/Listing';
 import ListingMarket from '../components/ListingMarket';
-// import Contact from '../components/Contact';
-// import { Notes } from '../../api/note/Notes';
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 const MarketListings = () => {
 
