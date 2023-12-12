@@ -30,11 +30,11 @@ const ListingMarket = ({ listing }) => (
       </div>
     </Card.Header>
     <Card.Body>
-      <Card.Title>{listing.title} offered by {listing.owner}</Card.Title>
+      <Card.Title>{listing.description}</Card.Title>
       <div className="d-flex justify-content-center">
         <Card.Subtitle>Condition: {listing.condition}</Card.Subtitle>
       </div>
-      <Card.Text>{listing.description}</Card.Text>
+      <Card.Text>Offered by {listing.owner}</Card.Text>
     </Card.Body>
     <button onClick={() => buy(listing)} type="button" className="btn btn-success">Buy</button>
   </Card>
